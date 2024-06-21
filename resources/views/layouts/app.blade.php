@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    {{-- @yield('content') --}}
+    @yield('content')
     <!-- jQery -->
     <script src="assets/landingPage/js/jquery-3.4.1.min.js"></script>
     <!-- bootstrap js -->

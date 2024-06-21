@@ -31,6 +31,17 @@
     <!-- responsive style -->
     <link href="{{ asset('assets/landingPage/css/responsive.css') }}" rel="stylesheet" />
 
+    <style>
+        .more-link {
+            color: #007bff;
+            /* Blue color */
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -39,51 +50,7 @@
 
         <div class="hero_area">
             <!-- header section strats -->
-            <header class="header_section">
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-lg custom_nav-container ">
-                        <a class="navbar-brand" href="index.html">
-                            Pasakrorasakti
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class=""> </span>
-                        </button>
-
-                        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#home">Home <span
-                                            class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('client.about') }}"> About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="chocolate.html">Produk</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="testimonial.html">Testimonial</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact Us</a>
-                                </li>
-                            </ul>
-                            <div class="quote_btn-container">
-                                <form class="form-inline">
-                                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </form>
-                                <a href="{{ route('login') }}">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </header>
+            @include('layouts.header')
             <!-- end header section -->
             <!-- slider section -->
             <section class="slider_section" id="home">
@@ -130,7 +97,7 @@
         </div>
 
         <!-- about section -->
-        <section class="about_section layout_padding ">
+        <section class="about_section layout_padding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -141,8 +108,9 @@
                                 </h2>
                             </div>
                             <p>
-                                {{ $about->content }}
+                                {{ Str::words($about->content, 50, '...') }}
                             </p>
+                            <a href="{{ route('client.about') }}" class="more-link">Read More</a>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -153,6 +121,8 @@
                 </div>
             </div>
         </section>
+
+
         <!-- end about section -->
 
         <!-- chocolate section -->
@@ -429,6 +399,30 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
     </script>
     <!-- End Google Map -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var maxLength = 200; // Max length of content to show initially
+            var content = $('.about-content').html(); // Get the content
+            var moreText = content.substr(maxLength); // Get the part to be hidden
+
+            // Initial display of content
+            $('.about-content').html(content.substr(0, maxLength));
+            $('.about-more').html(moreText);
+
+            // Toggle Read More link
+            $('.more-link').click(function(event) {
+                event.preventDefault();
+                var $this = $(this);
+                var text = $this.text();
+                $('.about-more').toggle();
+                $('.about-content').toggle();
+                $this.text(text == "Read More" ? "Read Less" : "Read More");
+            });
+        });
+    </script>
+
 
 </body>
 

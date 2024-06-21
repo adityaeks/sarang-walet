@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController as ControllersProductController;
 use App\Models\Testimonial;
 
 /*
@@ -64,6 +65,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::put('/about/update/{id}', [BackendAboutController::class, 'aboutUpdate'])->name('about.update');
     Route::delete('/about/delete/{id}', [BackendAboutController::class, 'aboutDelete'])->name('about.delete');
 });
+
+// Product FE
+Route::get('/product', [ControllersProductController::class, 'index'])->name('client.product');
 
 // Product BE
 Route::prefix('admin')->group(function () {
