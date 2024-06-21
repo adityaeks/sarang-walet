@@ -16,7 +16,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('content.dashboard');
+        return view('admin.content.dashboard');
     }
 
     // Home Data Function Group
@@ -26,7 +26,7 @@ class DashboardController extends Controller
         $data = Home::all();
 
         //render view with posts
-        return view('content.home', compact('data'));
+        return view('admin.content.home', compact('data'));
     }
 
     public function homeStore(Request $request)
@@ -112,7 +112,7 @@ class DashboardController extends Controller
         $data = About::all();
 
         //render view with posts
-        return view('content.about', compact('data'));
+        return view('admin.content.about', compact('data'));
     }
 
     public function aboutStore(Request $request)
@@ -203,7 +203,7 @@ class DashboardController extends Controller
         $data = Product::all();
 
         //render view with posts
-        return view('content.product', compact('data'));
+        return view('admin.content.product', compact('data'));
     }
 
     public function productStore(Request $request)
@@ -309,7 +309,7 @@ class DashboardController extends Controller
         $data = Testimonial::all();
 
         //render view with posts
-        return view('content.testimonial', compact('data'));
+        return view('admin.content.testimonial', compact('data'));
     }
 
     public function testimonialStore(Request $request)
@@ -400,7 +400,7 @@ class DashboardController extends Controller
         $data = Contact::all();
 
         //render view with posts
-        return view('content.contact', compact('data'));
+        return view('admin.content.contact', compact('data'));
     }
 
     public function contactStore(Request $request)

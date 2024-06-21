@@ -1,13 +1,13 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('dashboard')
-  @include('navigation.sidebar')
+  @include('admin.navigation.sidebar')
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        @include('navigation.navbar')
+        @include('admin.navigation.navbar')
         <div class="container-fluid py-4">
             @yield('content')
-            
-            @include('navigation.footer')
+
+            @include('admin.navigation.footer')
         </div>
   </main>
   <div class="fixed-plugin">

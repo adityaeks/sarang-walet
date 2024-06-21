@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('admin.layouts.main')
 
 @section('content')
 <div class="row">
@@ -40,7 +40,7 @@
                             <!-- Form for adding data -->
                             <form action="{{ route('testimonial.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-            
+
                                 <div class="form-group">
                                     <label class="font-weight-bold">GAMBAR</label>
                                     <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
@@ -49,7 +49,7 @@
                                         <div class="alert alert-danger mt-2">{{ $message }}</div>
                                     @enderror
                                 </div>
-            
+
                                 <div class="form-group">
                                     <label class="font-weight-bold">Name</label>
                                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Masukkan Judul Post">
@@ -67,7 +67,7 @@
                                         <div class="alert alert-danger mt-2">{{ $message }}</div>
                                     @enderror
                                 </div>
-            
+
                                 <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
                                 <button type="reset" class="btn btn-md btn-warning">RESET</button>
                             </form>
@@ -94,12 +94,12 @@
                                 <th scope="row">
                                     <img src="{{ asset('/storage/images/testimonial/'.$item->image) }}" class="rounded" style="width: 16%">
                                 </th>
-                                <th class="fs-5" scope="row">{{ $item->name }}</th>                                
-                                <th class="fs-5" scope="row">{{ $item->coment }}</th>                                
+                                <th class="fs-5" scope="row">{{ $item->name }}</th>
+                                <th class="fs-5" scope="row">{{ $item->coment }}</th>
                                 <th>
                                     <div class="d-flex justify-content-center">
                                         <button type="button" class="btn btn-lg bg-gradient-warning mx-2" data-bs-toggle="modal" data-bs-target="#editDataModal{{ $item->id }}">Edit</button>
-                                
+
                                         <!-- Edit Data Modal -->
                                         <div class="modal fade" id="editDataModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
@@ -113,12 +113,12 @@
                                                         <form action="{{ route('testimonial.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                                                             @csrf
                                                             @method('PUT')
-                                
+
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Image</label>
                                                                 <input type="file" class="form-control" name="image">
                                                             </div>
-                                
+
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Name</label>
                                                                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $item->name) }}" placeholder="Masukkan Judul Post">
@@ -136,7 +136,7 @@
                                                                     <div class="alert alert-danger mt-2">{{ $message }}</div>
                                                                 @enderror
                                                             </div>
-                                
+
                                                             <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                                                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
                                                         </form>
@@ -144,14 +144,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                
-                                        <form  onsubmit="return confirm('Are you sure want to delete it ?');" action="{{ route('testimonial.delete', $item->id) }}" method="post"">    
+
+                                        <form  onsubmit="return confirm('Are you sure want to delete it ?');" action="{{ route('testimonial.delete', $item->id) }}" method="post"">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-lg bg-gradient-danger" onclick="confirmDelete({{ $item->id }})">Delete</button>
-                                        </form> 
+                                        </form>
                                     </div>
-                                </th>                                    
+                                </th>
                             </tr>
                         @endforeach
                     </tbody>
