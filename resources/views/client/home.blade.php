@@ -14,9 +14,8 @@
 
     <title>Pasakrorasakti</title>
 
-
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="assets/landingPage/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/landingPage/css/bootstrap.css') }}" />
     <!--slick slider stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
@@ -24,14 +23,13 @@
     <!-- fonts style -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
     <!-- slick slider -->
-
-    <link rel="stylesheet" href="assets/landingPage/css/slick-theme.css" />
+    <link rel="stylesheet" href="{{ asset('assets/landingPage/css/slick-theme.css') }}" />
     <!-- font awesome style -->
-    <link href="assets/landingPage/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets/landingPage/css/font-awesome.min.css') }}" rel="stylesheet" />
     <!-- Custom styles for this template -->
-    <link href="assets/landingPage/css/style.css" rel="stylesheet" />
+    <link href="{{ asset('assets/landingPage/css/style.css') }}" rel="stylesheet" />
     <!-- responsive style -->
-    <link href="assets/landingPage/css/responsive.css" rel="stylesheet" />
+    <link href="{{ asset('assets/landingPage/css/responsive.css') }}" rel="stylesheet" />
 
 </head>
 
@@ -46,7 +44,6 @@
                     <nav class="navbar navbar-expand-lg custom_nav-container ">
                         <a class="navbar-brand" href="index.html">
                             Pasakrorasakti
-                        </a>
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -133,9 +130,8 @@
         </div>
 
         <!-- about section -->
-
         <section class="about_section layout_padding ">
-            <div class="container  ">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="detail-box">
@@ -157,7 +153,6 @@
                 </div>
             </div>
         </section>
-
         <!-- end about section -->
 
         <!-- chocolate section -->
@@ -418,140 +413,9 @@
 
         <!-- end contact section -->
 
-
-        <!-- info section -->
-        <section class="info_section layout_padding2">
-            <div class="container">
-                <div class="row info_form_social_row">
-                    <div class="col-md-8 col-lg-9">
-                        <div class="info_form">
-                            <form action="">
-                                <input type="email" placeholder="Enter your email">
-                                <button>
-                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-3">
-
-                        <div class="social_box">
-                            <a href="">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row info_main_row">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="info_links">
-                            <h4>
-                                Menu
-                            </h4>
-                            <div class="info_links_menu">
-                                <a href="index.html">
-                                    Home
-                                </a>
-                                <a href="about.html">
-                                    About
-                                </a>
-                                <a href="chocolate.html">
-                                    Sarang Walet
-                                </a>
-                                <a href="testimonial.html">
-                                    Testimonial
-                                </a>
-                                <a href="contact.html">
-                                    Contact us
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="info_insta">
-                            <h4>
-                                Instagram
-                            </h4>
-                            <div class="insta_box">
-                                <div class="img-box">
-                                    <img src="assets/landingPage/images/insta-img.png" alt="">
-                                </div>
-                                <p>
-                                    long established fact that a reader
-                                </p>
-                            </div>
-                            <div class="insta_box">
-                                <div class="img-box">
-                                    <img src="assets/landingPage/images/insta-img.png" alt="">
-                                </div>
-                                <p>
-                                    long established fact that a reader
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="info_detail">
-                            <h4>
-                                Company
-                            </h4>
-                            <p class="mb-0">
-                                when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                                normal distribution of letters, as opposed to
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <h4>
-                            Contact Us
-                        </h4>
-                        <div class="info_contact">
-                            <a href="">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span>
-                                    Location
-                                </span>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                <span>
-                                    No Telepone +62 812 3456 7890
-                                </span>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-envelope"></i>
-                                <span>
-                                    Pasakrorasakti@gmail.com
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- end info_section -->
-
     </div>
 
-    <!-- footer section -->
-    <footer class="container-fluid footer_section">
-        <div class="container">
-            <div class="col-md-11 col-lg-8 mx-auto">
-                <p>
-                    &copy; <span id="displayYear"></span> All Rights Reserved By
-                    <a href="https://html.design/">Free Html Templates</a>
-                </p>
-            </div>
-        </div>
-    </footer>
-    <!-- footer section -->
+    @include('layouts.footer')
 
     <!-- jQery -->
     <script src="assets/landingPage/js/jquery-3.4.1.min.js"></script>
