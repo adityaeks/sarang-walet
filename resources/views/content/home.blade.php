@@ -82,7 +82,7 @@
                             <tr>
                                 <th class="fs-5" scope="row">{{ $loop->iteration }}</th>
                                 <th scope="row">
-                                    <img src="{{ asset('storage/images/home/'.$item->image) }}" class="rounded" style="width: 16%">
+                                    <img src="{{ asset('/storage/images/home/'.$item->image) }}" class="rounded" style="width: 16%">
                                 </th>
                                 <th class="fs-5" scope="row">{{ $item->name }}</t5>
                                 <th>
