@@ -36,7 +36,41 @@
 </head>
 
 <body>
-    @yield('content')
+    @include('layouts.header')
+    <!-- about section -->
+
+    <section class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                @foreach ($data as $about)
+                    <div class="col-md-6">
+                        <div class="detail-box">
+                            <div class="heading_container">
+                                <h2>
+                                    {{ $about->title }}
+                                </h2>
+                            </div>
+                            <p>
+                                {{ $about->content }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="img-box">
+                            <img src="{{ asset('/storage/images/about/' . $about->image) }}" alt="">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    @include('layouts.footer')
+
+
+    <!-- end about section -->
+
+    {{-- @yield('content') --}}
     <!-- jQery -->
     <script src="assets/landingPage/js/jquery-3.4.1.min.js"></script>
     <!-- bootstrap js -->
