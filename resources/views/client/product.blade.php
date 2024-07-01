@@ -133,26 +133,29 @@
         <div class="container">
             <div class="chocolate-container">
                 @foreach ($data as $item)
-                    <div class="card">
-                        <div class="img-box">
+                <div class="card">
+                    <div class="img-box">
+                        <a href="{{ route('client.product_detail', $item->id) }}">
                             <img src="{{ asset('/storage/images/product/' . $item->image) }}" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Premium <span>{{ $item->name }}</span>
-                            </h6>
-                            <h5>
-                                Rp {{ number_format($item->price, 0, ',', '.') }}
-                            </h5>
-                            <a href="#">
-                                BUY NOW
-                            </a>
-                        </div>
+                        </a>
                     </div>
+                    <div class="detail-box">
+                        <h6>
+                            Premium <span>{{ $item->name }}</span>
+                        </h6>
+                        <h5>
+                            Rp {{ number_format($item->price, 0, ',', '.') }}
+                        </h5>
+                        <a href="">
+                            BUY NOW
+                        </a>
+                    </div>
+                </div>
                 @endforeach
             </div>
         </div>
-        F
+
+
     </section>
 
     @include('layouts.footer')

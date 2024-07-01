@@ -140,104 +140,29 @@
             </div>
             <div class="container">
                 <div class="chocolate_container">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="assets/landingPage/images/chocolate1.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Premium <span>Sarang Walet</span>
-                            </h6>
-                            <h5>
-                                Rp 14.000.000
-                            </h5>
-                            <a href="">
-                                BUY NOW
+                    @foreach ($data as $item)
+                        <div class="box">
+                            <a href="{{ route('client.product_detail', $item->id) }}">
+                                <div class="img-box">
+                                    <img src="{{ asset('/storage/images/product/' . $item->image) }}" alt>
+                                </div>
+                                <div class="detail-box">
+                                    <h6>
+                                        Premium <span>{{ $item->name }}</span>
+                                    </h6>
+                                    <h5>
+                                        Rp {{ number_format($item->price, 0, ',', '.') }}
+                                    </h5>
+                                    <a href>
+                                        BUY NOW
+                                    </a>
+                                </div>
                             </a>
                         </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="assets/landingPage/images/chocolate2.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Standart <span>Sarang Walet</span>
-                            </h6>
-                            <h5>
-                                Rp 11.000.000
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="assets/landingPage/images/chocolate3.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Pecahan <span>Sarang Walet</span>
-                            </h6>
-                            <h5>
-                                Rp 9.000.000
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="assets/landingPage/images/chocolate1.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Premium <span>Sarang Walet</span>
-                            </h6>
-                            <h5>
-                                Rp 14.000.000
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="assets/landingPage/images/chocolate2.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Standart <span>Sarang Walet</span>
-                            </h6>
-                            <h5>
-                                Rp 11.000.000
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="assets/landingPage/images/chocolate3.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Pecahan <span>Sarang Walet</span>
-                            </h6>
-                            <h5>
-                                Rp 9.000.000
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
+
         </section>
 
         <!-- end chocolate section -->
@@ -278,7 +203,7 @@
 
         <!-- client section -->
 
-        <section class="client_section">
+        <section class="client_section" id="testimonial">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 ml-auto">
@@ -339,7 +264,7 @@
 
         <!-- contact section -->
 
-        <section class="contact_section layout_padding">
+        <section class="contact_section layout_padding" id="contact">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-5 col-lg-4 offset-md-1 offset-lg-2">

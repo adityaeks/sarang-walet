@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\ContaclController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TestimonialController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Models\Home;
 use App\Models\About;
@@ -43,6 +44,7 @@ Route::get('actionLogout', [LoginController::class, 'actionLogout'])->name('acti
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+
 // Home
 
 
@@ -68,6 +70,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 // Product FE
 Route::get('/product', [ControllersProductController::class, 'index'])->name('client.product');
+Route::get('/product/{id}', [ControllersProductController::class, 'show'])->name('client.product_detail');
+
 
 // Product BE
 Route::prefix('admin')->group(function () {
@@ -108,3 +112,6 @@ Route::prefix('admin')->group(function(){
     Route::put('/home/update/{id}', [SliderController::class, 'homeUpdate'])->name('home.update')->middleware('auth');
     Route::delete('/home/delete/{id}', [SliderController::class, 'homeDelete'])->name('home.delete')->middleware('auth');
 });
+
+// user dasboard
+Route::get('client/dashboard', [CustomerController::class, 'dashboard'])->middleware('auth')->name('client.dashboard');

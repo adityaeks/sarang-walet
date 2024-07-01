@@ -23,10 +23,10 @@
                         <a class="nav-link" href="{{ route('client.product') }}">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="testimonial.html">Testimonial</a>
+                        <a class="nav-link" href="{{ url('/') }}#testimonial">Testimonial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="{{ url('/') }}#contact">Contact Us</a>
                     </li>
                 </ul>
                 <div class="quote_btn-container">
